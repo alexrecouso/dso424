@@ -3,6 +3,7 @@
 library(lubridate)
 library(tidyverse)
 library(dygraphs)
+library(dplyr)
 
 # Import competition data in R:
 # dont forget to change working directory
@@ -73,6 +74,8 @@ data %>% slice(1:(24*365)) %>%
   ggplot(aes(x=Time,y=Load)) + 
   geom_line()+ geom_point() + theme_bw()
 
+#export data set with features to use it in python
+write.csv(data,"/Users/alexrecouso/Documents/GitHub/dso424/HW4\\CompetitionDataPython.csv", row.names = FALSE)
 
 ##########################################################
 #                          M0
